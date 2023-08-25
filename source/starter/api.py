@@ -2,16 +2,16 @@
 
 import logging
 
-import fastapi
+from fastapi import FastAPI
 
 from .starter import hello
 
 log = logging.getLogger("starter")
 
-router = fastapi.APIRouter()
+app = FastAPI()
 
 
-@router.get("/say/{name}")
+@app.get("/say/{name}")
 async def say(name: str) -> str:
     """Function Docstring."""
     log.info("Calling: hello() with [%s]", name)

@@ -1,10 +1,10 @@
-site_name: streamlit-poetry-starter
-site_url: https://cwang.github.io/streamlit-poetry-starter
-site_description: Template for a well-setup Streamlit project
+site_name: fastapi-poetry-starter
+site_url: https://cwang.github.io/fastapi-poetry-starter
+site_description: Template for a well-setup FastAPI project
 site_author: Chen Wang
 site_dir: html
-repo_name: cwang/streamlit-poetry-starter
-repo_url: https://github.com/cwang/streamlit-poetry-starter
+repo_name: cwang/fastapi-poetry-starter
+repo_url: https://github.com/cwang/fastapi-poetry-starter
 
 plugins:
   - search

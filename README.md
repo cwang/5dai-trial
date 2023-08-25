@@ -8,33 +8,30 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
 
-  <h3 align="center"> streamlit-poetry-starter</h3>
+  <h3 align="center"> fastapi-poetry-starter</h3>
 
   <p align="center">
-    Template for a well-setup Streamlit project
+    Template for a well-setup FastAPI project
     <br />
-    <a href="https://cwang.github.io/streamlit-poetry-starter/readme.html"><strong>Explore the docs »</strong></a>
+    <a href="https://cwang.github.io/fastapi-poetry-starter/readme.html"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/cwang/streamlit-poetry-starter/issues">Report Bug</a>
+    <a href="https://github.com/cwang/fastapi-poetry-starter/issues">Report Bug</a>
     ·
-    <a href="https://github.com/cwang/streamlit-poetry-starter/issues">Request Feature</a>
+    <a href="https://github.com/cwang/fastapi-poetry-starter/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -59,16 +56,16 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-Template for a well-setup Streamlit project
+Template for a well-setup FastAPI project
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To run this project locally, you will need to install the prerequisites and follow the installation section.
@@ -76,12 +73,14 @@ To run this project locally, you will need to install the prerequisites and foll
 ### Prerequisites
 
 This Project depends on the following projects.
-* Poetry
+
+- Poetry
+
   ```sh
   pip install --user --upgrade poetry
   ```
 
-* Poe the Poet
+- Poe the Poet
   ```sh
   pip install --user --upgrade poethepoet
   ```
@@ -90,8 +89,8 @@ This Project depends on the following projects.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/cwang/streamlit-poetry-starter
-   cd streamlit-poetry-starter
+   git clone https://github.com/cwang/fastapi-poetry-starter
+   cd fastapi-poetry-starter
    ```
 2. Install Poe the Poet and Poetry
    ```sh
@@ -108,53 +107,62 @@ This Project depends on the following projects.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Some useful examples of how this project can be used:
 
-*  Install requirements
-   ```sh
-   poe install-dev
-   ```
+- Install requirements
 
-*  Run tests
-   ```sh
-   poe test
-   ```
+  ```sh
+  poe install-dev
+  ```
 
-*  Run the project
-   ```sh
-   poe run
-   ```
+- Run tests
 
-*  Generate API documentation
-   ```sh
-   poe doc
-   ```
+  ```sh
+  poe test
+  ```
 
-*  Build a docker image for tests
-   ```sh
-   poe docker-build --target test --build-tag 3.10-alpine
-   docker run -ti --rm starter:test-3.10-alpine
-   ```
+- Run the project via the main entrypoint
 
-*  Build a docker image to run the root files only without running any test
-   ```sh
-   poe docker-build --target prod --build-tag 3.10-alpine --no-test
-   docker run -ti --rm starter:prod-3.10-alpine
-   ```
-   
+  ```sh
+  poe run
+  ```
 
-_For more examples, please refer to the [Documentation](https://cwang.github.io/streamlit-poetry-starter/readme.html)_
+- Generate API documentation
+
+  ```sh
+  poe doc
+  ```
+
+- Build a docker image for tests
+
+  ```sh
+  poe docker-build --target test --build-tag 3.10-alpine
+  docker run -ti --rm starter:test-3.10-alpine
+  ```
+
+- Build a docker image to run the root files only without running any test
+
+  ```sh
+  poe docker-build --target prod --build-tag 3.10-alpine --no-test
+  docker run -ti --rm starter:prod-3.10-alpine
+  ```
+
+- Lastly, run the project with Uvicorn with reloading enabled
+
+  ```sh
+  poe uvicorn
+  ```
+
+_For more examples, please refer to the [Documentation](https://cwang.github.io/fastapi-poetry-starter/readme.html)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 - [x] Add tests
@@ -162,13 +170,12 @@ _For more examples, please refer to the [Documentation](https://cwang.github.io/
 - [x] Improve documentation
 - [ ] Include more tests
 
-See the [open issues](https://github.com/cwang/streamlit-poetry-starter/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/cwang/fastapi-poetry-starter/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Any contributions you make are **greatly appreciated**.
@@ -184,45 +191,44 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
 <!-- CONTACT -->
+
 ## Contact
 
 Chen Wang - [@cwang](https://github.com/cwang) - dev@chenwang.org
 
-Project Link: [https://github.com/cwang/streamlit-poetry-starter/](https://github.com/cwang/streamlit-poetry-starter/)
+Project Link: [https://github.com/cwang/fastapi-poetry-starter/](https://github.com/cwang/fastapi-poetry-starter/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
 This project was created using cookiecutter and NullHack's python-project-template:
 
-* [NullHack's python-project-template](https://github.com/nullhack/python-project-template/)
+- [NullHack's python-project-template](https://github.com/nullhack/python-project-template/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- LICENSE -->
+
 ## License
 
-Distributed under the MIT License. See [`LICENSE`](https://github.com/cwang/streamlit-poetry-starter/blob/main/LICENSE) for more information.
+Distributed under the MIT License. See [`LICENSE`](https://github.com/cwang/fastapi-poetry-starter/blob/main/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/cwang/streamlit-poetry-starter.svg?style=for-the-badge
-[contributors-url]: https://github.com/cwang/streamlit-poetry-starter/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/cwang/streamlit-poetry-starter.svg?style=for-the-badge
-[forks-url]: https://github.com/cwang/streamlit-poetry-starter/network/members
-[stars-shield]: https://img.shields.io/github/stars/cwang/streamlit-poetry-starter.svg?style=for-the-badge
-[stars-url]: https://github.com/cwang/streamlit-poetry-starter/stargazers
-[issues-shield]: https://img.shields.io/github/issues/cwang/streamlit-poetry-starter.svg?style=for-the-badge
-[issues-url]: https://github.com/cwang/streamlit-poetry-starter/issues
-[license-shield]: https://img.shields.io/badge/license-MIT-green?style=for-the-badge
-[license-url]: https://github.com/cwang/streamlit-poetry-starter/blob/main/LICENSE
 
+[contributors-shield]: https://img.shields.io/github/contributors/cwang/fastapi-poetry-starter.svg?style=for-the-badge
+[contributors-url]: https://github.com/cwang/fastapi-poetry-starter/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/cwang/fastapi-poetry-starter.svg?style=for-the-badge
+[forks-url]: https://github.com/cwang/fastapi-poetry-starter/network/members
+[stars-shield]: https://img.shields.io/github/stars/cwang/fastapi-poetry-starter.svg?style=for-the-badge
+[stars-url]: https://github.com/cwang/fastapi-poetry-starter/stargazers
+[issues-shield]: https://img.shields.io/github/issues/cwang/fastapi-poetry-starter.svg?style=for-the-badge
+[issues-url]: https://github.com/cwang/fastapi-poetry-starter/issues
+[license-shield]: https://img.shields.io/badge/license-MIT-green?style=for-the-badge
+[license-url]: https://github.com/cwang/fastapi-poetry-starter/blob/main/LICENSE

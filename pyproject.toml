@@ -5,8 +5,8 @@ description = "Template for a well-setup FastAPI project"
 authors = ["Chen Wang <dev@chenwang.org>"]
 maintainers = ["Chen Wang <dev@chenwang.org>"]
 license = "MIT"
-repository = "https://github.com/cwang/fastapi-starter"
-documentation = "https://github.com/cwang/fastapi-starter/tree/main/docs/api/"
+repository = "https://github.com/cwang/fastapi-poetry-starter"
+documentation = "https://github.com/cwang/fastapi-poetry-starter/tree/main/docs/api/"
 readme = "README.md"
 packages = [
     { include = "starter", from = "source" },
@@ -130,9 +130,9 @@ doc-publish = """mkdocs gh-deploy \
 --remote-branch docs"""
 
 [tool.poe.tasks.uvicorn]
-cmd = "uvicorn starter.api:router --reload --port $port"
+cmd = "uvicorn starter.api:app --reload --port $port"
 args = [
-    { name = "port", default = 4000, type = "integer" },
+    { name = "port", default = 8000, type = "integer" },
 ]
 
 [tool.poe.tasks.docker-build]
