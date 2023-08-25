@@ -1,12 +1,10 @@
 """Module Docstring."""
 
-from .hello import say
 
-
-def main() -> None:
+def hello(name: str = "World") -> str:
     """Function Docstring."""
-    print(say("World"))
+    return f"Hello {name}"
 
 
 if __name__ == "__main__":
-    main()
+    print(hello())

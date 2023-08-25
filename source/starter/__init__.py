@@ -1,3 +1,3 @@
-"""Template for a well-setup Streamlit project."""
+"""Template for a well-setup FastAPI project."""
 
 __all__ = ["hello", "starter"]
