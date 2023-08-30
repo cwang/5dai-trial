@@ -15,30 +15,20 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-
-  <h3 align="center"> fastapi-poetry-starter</h3>
-
-  <p align="center">
-    Template for a well-setup FastAPI project
-    <br />
-    <a href="https://cwang.github.io/fastapi-poetry-starter/readme.html"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/cwang/fastapi-poetry-starter/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/cwang/fastapi-poetry-starter/issues">Request Feature</a>
-  </p>
-</div>
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li>
+          <a href="#scope">Scope</a>
+        </li>
+        <li>
+          <a href="#assumptions">Assumptions</a>
+        </li>
+      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -60,7 +50,11 @@
 
 ## About The Project
 
-Template for a well-setup FastAPI project
+A trial project for 5D AI
+
+### Scope
+
+### Assumptions
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -89,8 +83,8 @@ This Project depends on the following projects.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/cwang/fastapi-poetry-starter
-   cd fastapi-poetry-starter
+   git clone https://github.com/cwang/5dai-trial
+   cd 5dai-trial
    ```
 2. Install Poe the Poet and Poetry
    ```sh
@@ -141,14 +135,14 @@ Some useful examples of how this project can be used:
 
   ```sh
   poe docker-build --target test --build-tag 3.10-alpine
-  docker run -ti --rm starter:test-3.10-alpine
+  docker run -ti --rm 5dai:test-3.10-alpine
   ```
 
 - Build a docker image to run the root files only without running any test
 
   ```sh
   poe docker-build --target prod --build-tag 3.10-alpine --no-test
-  docker run -ti --rm starter:prod-3.10-alpine
+  docker run -ti --rm 5dai:prod-3.10-alpine
   ```
 
 - Lastly, run the project with Uvicorn with reloading enabled
@@ -157,7 +151,7 @@ Some useful examples of how this project can be used:
   poe uvicorn
   ```
 
-_For more examples, please refer to the [Documentation](https://cwang.github.io/fastapi-poetry-starter/readme.html)_
+_For more examples, please refer to the [Documentation](https://cwang.github.io/5dai-trial/readme.html)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -197,7 +191,7 @@ Don't forget to give the project a star! Thanks again!
 
 Chen Wang - [@cwang](https://github.com/cwang) - dev@chenwang.org
 
-Project Link: [https://github.com/cwang/fastapi-poetry-starter/](https://github.com/cwang/fastapi-poetry-starter/)
+Project Link: [https://github.com/cwang/5dai-trial/](https://github.com/cwang/5dai-trial/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
