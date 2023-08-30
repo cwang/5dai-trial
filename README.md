@@ -28,6 +28,9 @@
         <li>
           <a href="#assumptions">Assumptions</a>
         </li>
+        <li>
+          <a href="#design-decisions">Design Decisions</a>
+        </li>
       </ul>
     </li>
     <li>
@@ -35,6 +38,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#quick-run-through">Quick Run Through</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -50,11 +54,36 @@
 
 ## About The Project
 
-A trial project for 5D AI
+A trial project for 5D AI.
+
+It simulates a chat API layer using supplied documents.
 
 ### Scope
 
+- Only an API layer and services backing it, no UI/UX.
+- As an API client,
+  - One can start a new task which is the equivalent of send first email to start an email thread per demo, optionally with documents
+  - One can also continue the conversation in a task by asking more questions, which is the equivalent of sending following emails to an existing email thread, optionally with more documents
+  - One can query any given task about existing conversations and documents attached
+- As the system,
+  - It offers the set of APIs (as described above) implemented by following [RAG](https://eugeneyan.com/writing/llm-patterns/#retrieval-augmented-generation-to-add-knowledge) pattern with the use of LLMs
+  - It does not attempt to communicate out via any channels such as email, seeing it purely within any API client's responsibilities
+
 ### Assumptions
+
+- No external integrations required such as Zapier
+- Use of LLMs is via API calls to 3rd-party services such as OpenAI
+- Ease of deployment is considered, supporting both direct and Docker-based deployments
+
+### Design Decisions
+
+In short, as a MVP (and a trial project), priority is given to implement a number of features over design a production-ready system.
+
+It is a self-contained app that one can run locally and interact with to demonstrate its capabilities.
+
+- Use local disk to store data, avoiding introducing dependencies such as a relational database and another vector database.
+- Use OpenAI GPT-3.5-turbo with OpenAI embeddings, for the pairing is a tried and tested solution.
+- No tests (as of now), QA done by manual testing.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -98,6 +127,43 @@ This Project depends on the following projects.
    ```sh
    poe test
    ```
+
+### Quick Run Through
+
+1. Run it locally (at port 8000)
+
+```sh
+poe uvicorn
+```
+
+2. Create first task (e.g. email thread) while uploading some PDFs at the same time
+
+   ```sh
+   curl -v http://127.0.0.1:8000/tasks -F 'question=Give me a list of the new technologies mentioned in the docs?' -F 'files=@misc/tr_technology_radar_vol_2_en.pdf'  -F 'files=@misc/tr_technology_radar_vol_1_en.pdf'
+   ```
+
+3. Capture the `id` of the task from the response; Wait 10-20 seconds and then read back the newly created task
+
+   ```sh
+   curl -v http://127.0.0.1:8000/tasks/1
+   # Optionally pipe it to jq for better JSON readability
+   ```
+
+4. Continue with the task by asking another question
+
+   ```sh
+   curl -v http://127.0.0.1:8000/tasks/1 -F 'question=Which technologies in the list has been mention in both docs?'
+   ```
+
+5. Repeat step 3 to get latest answer as part of the response
+
+6. More documents can be uploaded during the conversation with an existing task, such as
+
+   ```sh
+   curl -v http://127.0.0.1:8000/tasks/1 -F 'question=Which technologies are mentioned in all docs?' -F 'files=@misc/tr_technology_radar_vol_8_en.pdf'
+   ```
+
+7. More tasks can be created, as per step 2
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -145,7 +211,7 @@ Some useful examples of how this project can be used:
   docker run -ti --rm 5dai:prod-3.10-alpine
   ```
 
-- Lastly, run the project with Uvicorn with reloading enabled
+- Lastly, run the project with Uvicorn with reloading enabled, running on port 8000 by default
 
   ```sh
   poe uvicorn

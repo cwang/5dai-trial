@@ -136,9 +136,9 @@ doc-publish = """mkdocs gh-deploy \
 --remote-branch docs"""
 
 [tool.poe.tasks.uvicorn]
-cmd = "uvicorn 5dai.api:app --reload --port $port"
+cmd = "uvicorn 5dai.api:app --reload --port $PORT"
 args = [
-    { name = "port", default = 8000, type = "integer" },
+    { name = "PORT", default = 8000, type = "integer" },
 ]
 
 [tool.poe.tasks.docker-build]
