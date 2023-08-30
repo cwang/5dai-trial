@@ -38,6 +38,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#deployment">Deployment</a></li>
         <li><a href="#quick-run-through">Quick Run Through</a></li>
       </ul>
     </li>
@@ -127,6 +128,14 @@ This Project depends on the following projects.
    ```sh
    poe test
    ```
+
+### Deployment
+
+It's automatically deployed to [Render](render.com) at
+
+`https://fivedai-trial.onrender.com`
+
+Replace the localhost url below with the Render url above to try it without running it locally.
 
 ### Quick Run Through
 

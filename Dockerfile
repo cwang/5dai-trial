@@ -46,6 +46,5 @@ COPY --chown=user:user --from=test /home/user/app/dist dist
 RUN pip install --no-cache -r requirements.txt dist/*.whl --user
 
 
-ENTRYPOINT ["python", "-m"]
-CMD ["starter.starter"]
+ENTRYPOINT ["uvicorn", "5dai.api:app", "--port", "$PORT"]
 

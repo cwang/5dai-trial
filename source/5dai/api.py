@@ -29,6 +29,12 @@ init_database()
 app = FastAPI()
 
 
+@app.get("/health")
+async def health() -> dict[str, str]:
+    """Health check."""
+    return {"status": "ok"}
+
+
 @app.post("/tasks")
 async def create_task(
     background_tasks: BackgroundTasks,
